@@ -1,84 +1,69 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE html><html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>메시지 트리 🎄</title>
+  <title>✨ 픽셀 메시지 트리 ✨</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #cceeff;
+      background-color: #b3e5fc;
       font-family: 'Press Start 2P', cursive;
-      margin: 0;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
+      margin: 0;
     }
-
     h1 {
-      font-size: 16px;
-      margin-bottom: 10px;
+      font-size: 14px;
+      margin-bottom: 20px;
     }
-
     .tree-container {
       position: relative;
       width: 360px;
       margin: 0 auto;
     }
-
     .tree-bg {
       width: 100%;
       image-rendering: pixelated;
     }
-
-    .ornament {
+    .envelope {
       position: absolute;
       width: 32px;
       height: 32px;
       cursor: pointer;
       image-rendering: pixelated;
     }
-
     .popup {
       display: none;
       position: absolute;
-      background-color: white;
-      border: 3px solid black;
+      background-color: #fff8dc;
+      border: 3px solid #000;
       padding: 10px;
       font-size: 10px;
       width: 200px;
       z-index: 10;
     }
-
     footer {
       font-size: 10px;
-      margin-top: 30px;
       color: #555;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+  <h1>🌳 Pixel Tree — Leave Your Message! 🌳</h1>  <div class="tree-container">
+    <img src="https://opengameart.org/sites/default/files/tree_0.png" class="tree-bg" alt="픽셀 트리"><img src="https://opengameart.org/sites/default/files/envelope_yellow_32.png" class="envelope" style="top: 50px; left: 80px;" onclick="showMessage(event, '오늘도 좋은 하루!')">
+<img src="https://opengameart.org/sites/default/files/envelope_yellow_32.png" class="envelope" style="top: 90px; left: 200px;" onclick="showMessage(event, '응원해요 ❤️')">
+<img src="https://opengameart.org/sites/default/files/envelope_yellow_32.png" class="envelope" style="top: 130px; left: 140px;" onclick="showMessage(event, '힘내자! 같이 열심히 놀자!')">
 
-  <h1>🎄 내 메시지 트리 🎄</h1>
-  <div class="tree-container">
-    <img src="https://i.imgur.com/MxUqO6R.png" alt="픽셀트리" class="tree-bg">
+<div id="popup" class="popup"></div>
 
-    <!-- 메시지 오너먼트들 -->
-    <img src="https://i.imgur.com/14eb5eF.png" class="ornament" style="top: 60px; left: 140px;" onclick="showMessage(event, '✨ 올해도 고생했어!')">
-    <img src="https://i.imgur.com/14eb5eF.png" class="ornament" style="top: 110px; left: 100px;" onclick="showMessage(event, '🎁 메리 크리스마스!')">
-    <img src="https://i.imgur.com/14eb5eF.png" class="ornament" style="top: 150px; left: 180px;" onclick="showMessage(event, '💖 넌 정말 소중한 사람이야!')">
-
-    <div id="popup" class="popup"></div>
-  </div>
-
-  <footer>
-    © 2025 PickTree Project<br>Inspired by colormytree.me
-  </footer>
-
-  <script>
+  </div>  <footer>
+    © 2025 PixelTree Project | Inspired by ColorMyTree.me
+  </footer>  <script>
     function showMessage(event, text) {
       const popup = document.getElementById('popup');
       popup.textContent = text;
       popup.style.top = event.target.offsetTop + 40 + 'px';
-      popup.style.left = event.target.offsetLeft - 40 + 'px';
+      popup.style.left = event.target.offsetLeft - 30 + 'px';
       popup.style.display = 'block';
 
       clearTimeout(window._popupTimer);
@@ -86,7 +71,5 @@
         popup.style.display = 'none';
       }, 3000);
     }
-  </script>
-
-</body>
+  </script></body>
 </html>
